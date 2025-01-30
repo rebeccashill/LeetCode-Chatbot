@@ -18,9 +18,17 @@ void printFile(string fileName){
 }
 
 int checkProblemName(string problemName){
+	bool prob;
  	if (problemName == "WordSearchII" or problemName == "maximalRectangle"){
- 		printFile(problemName);
- 		return 0;
+ 		cout << "Is the problem name " << problemName << "? Answer true or false.";
+ 		cin >> prob;
+ 		if (prob == true){
+ 			return 0;
+ 		}
+ 		else {
+ 	 		cout << "Please re-enter a different problem name.";
+ 	 		return 1;
+ 		}
  	}
  	else {
  		cout << "Sorry, we don't have that problem in storage. Better luck next time!" << endl;
