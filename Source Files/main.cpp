@@ -3,7 +3,21 @@
 #include <string>
 using namespace std;
 
-void printFile(string fileName){
+void printFileBruteForce(string fileName){
+		std::ifstream f(fileName);
+		if (!f.is_open()) {
+			std::cerr << "Error: Could not open the file." << std::endl;
+		}
+
+		std::string line;
+		while (std::getline(f, line)) {
+			std::cout << line << std::endl;
+		}
+
+	f.close();
+}
+
+void printFileMostEfficient(string fileName){
 		std::ifstream f(fileName);
 		if (!f.is_open()) {
 			std::cerr << "Error: Could not open the file." << std::endl;
@@ -18,11 +32,11 @@ void printFile(string fileName){
 }
 
 int checkProblemName(string problemName){
-	bool prob;
+	string prob;
  	if (problemName == "WordSearchII" or problemName == "maximalRectangle"){
  		cout << "Is the problem name " << problemName << "? Answer true or false.";
  		cin >> prob;
- 		if (prob == true){
+ 		if (prob == "true" or prob == "True"){
  			return 0;
  		}
  		else {
@@ -37,14 +51,19 @@ int checkProblemName(string problemName){
 }
 
 
-/*void checkAnswerCharacteristics(string answerCharacteristics, string problemName){
+int checkAnswerCharacteristics(string answerCharacteristics, string problemName){
 	if (answerCharacteristics == "brute force"){
-		checkProblemNameBruteForce(problemName);
+		printFileBruteForce(problemName);
+		return 0;
 	}
-	else if (answerCharacteristics == "fastest" or answerCharacteristics == "fastest + with the least amount of memory"){
-		checkProblemNameBest(problemName);
+	else if (answerCharacteristics == "efficient" or answerCharacteristics == "most efficient"){
+		printFileMostEfficient(problemName);
+		return 0;
 	}
-}*/
+	else {
+		return 1;
+	}
+}
 
 int main(){
 	string problemName;
@@ -54,15 +73,14 @@ int main(){
 	cin >> problemName;
 
 	/*Check to see if the problem is in the chatbot*/
-    	if (checkProblemName(problemName) == 1){
-    		cout << " Let's start over." << endl;
-    		return 0;
-    	}
+    if (checkProblemName(problemName) == 1){
+    	cout << " Let's start over." << endl;
+    	return 0;
+    }
 
-    	cout << "Would you like a brute force answer or the fastest + with the least amount of memory?";
-    	cin >> answerCharacteristics;
+    cout << "Would you like a brute force answer or the most efficient answer?";
+    cin >> answerCharacteristics;
 
-    	//checkAnswerCharacteristics(answerCharacteristics, problemName);
+    checkAnswerCharacteristics(answerCharacteristics, problemName);
 	return 0;
 }
-
