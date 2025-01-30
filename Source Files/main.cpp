@@ -4,28 +4,28 @@
 using namespace std;
 
 void printFileBruteForce(string fileName){
-		std::ifstream f(fileName);
+		ifstream f(fileName);
 		if (!f.is_open()) {
-			std::cerr << "Error: Could not open the file." << std::endl;
+			cerr << "Error: Could not open the file." << endl;
 		}
 
-		std::string line;
-		while (std::getline(f, line)) {
-			std::cout << line << std::endl;
+		string line;
+		while (getline(f, line)) {
+			cout << line << endl;
 		}
 
 	f.close();
 }
 
 void printFileMostEfficient(string fileName){
-		std::ifstream f(fileName);
+		ifstream f(fileName);
 		if (!f.is_open()) {
-			std::cerr << "Error: Could not open the file." << std::endl;
+			cerr << "Error: Could not open the file." << endl;
 		}
 
-		std::string line;
-		while (std::getline(f, line)) {
-			std::cout << line << std::endl;
+		string line;
+		while (getline(f, line)) {
+			cout << line << endl;
 		}
 
 	f.close();
