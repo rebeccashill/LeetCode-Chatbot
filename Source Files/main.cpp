@@ -48,18 +48,21 @@ int checkProblemName(string problemName){
 
 int main(){
 	string problemName;
-	string isProblemName;
 	string answerCharacteristics;
 
 	cout << "Welcome to the LeetCode Chatbot. Please enter the problem name: ";
 	cin >> problemName;
 
 	/*Check to see if the problem is in the chatbot*/
-    	checkProblemName(problemName);
+    	if (checkProblemName(problemName) == 1){
+    		cout << " Let's start over." << endl;
+    		return 0;
+    	}
 
     	cout << "Would you like a brute force answer or the fastest + with the least amount of memory?";
-   	cin >> answerCharacteristics;
+    	cin >> answerCharacteristics;
 
     	//checkAnswerCharacteristics(answerCharacteristics, problemName);
 	return 0;
 }
+
