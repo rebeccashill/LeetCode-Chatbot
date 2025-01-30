@@ -3,69 +3,73 @@
 #include <string>
 using namespace std;
 
-int printWordSearchIIBruteForce(){
-		std::ifstream f("WordSearchII.cpp");
-	    if (!f.is_open()) {
-	        std::cerr << "Error: Could not open the file." << std::endl;
-	        return 1;
-	    }
+class WordSearchII {
+	int printBruteForce(){
+			std::ifstream f("WordSearchII.cpp");
+			if (!f.is_open()) {
+				std::cerr << "Error: Could not open the file." << std::endl;
+				return 1;
+			}
 
-	    std::string line;
-	    while (std::getline(f, line)) {
-	        std::cout << line << std::endl;
-	    }
+			std::string line;
+			while (std::getline(f, line)) {
+				std::cout << line << std::endl;
+			}
 
-	    f.close();
-	    return 0;
-}
+			f.close();
+			return 0;
+	}
 
-int printWordSearchIIBest(){
-		std::ifstream f("WordSearchII.cpp");
-	    if (!f.is_open()) {
-	        std::cerr << "Error: Could not open the file." << std::endl;
-	        return 1;
-	    }
+	int printBest(){
+			std::ifstream f("WordSearchII.cpp");
+			if (!f.is_open()) {
+				std::cerr << "Error: Could not open the file." << std::endl;
+				return 1;
+			}
 
-	    std::string line;
-	    while (std::getline(f, line)) {
-	        std::cout << line << std::endl;
-	    }
+			std::string line;
+			while (std::getline(f, line)) {
+				std::cout << line << std::endl;
+			}
 
-	    f.close();
-	    return 0;
-}
+			f.close();
+			return 0;
+	}
+};
 
-int printmaximalRectangleBruteForce(){
+class MaximalRectangle {
+	int printBruteForce(){
+			std::ifstream f("maximalRectangle.cpp");
+			if (!f.is_open()) {
+				std::cerr << "Error: Could not open the file." << std::endl;
+				return 1;
+			}
+
+			std::string line;
+			while (std::getline(f, line)) {
+				std::cout << line << std::endl;
+			}
+
+			f.close();
+			return 0;
+	}
+
+	int printBest(){
 		std::ifstream f("maximalRectangle.cpp");
-	    if (!f.is_open()) {
-	        std::cerr << "Error: Could not open the file." << std::endl;
-	        return 1;
-	    }
+			if (!f.is_open()) {
+				std::cerr << "Error: Could not open the file." << std::endl;
+				return 1;
+			}
 
-	    std::string line;
-	    while (std::getline(f, line)) {
-	        std::cout << line << std::endl;
-	    }
+			std::string line;
+			while (std::getline(f, line)) {
+				std::cout << line << std::endl;
+			}
 
-	    f.close();
-	    return 0;
-}
-
-int printmaximalRectangleBest(){
-		std::ifstream f("maximalRectangle.cpp");
-	    if (!f.is_open()) {
-	        std::cerr << "Error: Could not open the file." << std::endl;
-	        return 1;
-	    }
-
-	    std::string line;
-	    while (std::getline(f, line)) {
-	        std::cout << line << std::endl;
-	    }
-
-	    f.close();
-	    return 0;
-}
+			f.close();
+			return 0;
+	}
+};
 
 int checkProblemName(string problemName){
  	if (problemName == "WordSearchII" or problemName == "maximalRectangle"){
@@ -78,23 +82,29 @@ int checkProblemName(string problemName){
 }
 
 int checkProblemNameBruteForce(string problemName){
+	WordSearchII search;
+	MaximalRectangle maximal;
  	if (problemName == "WordSearchII"){
- 		printWordSearchIIBruteForce();
+ 		search.printBruteForce();
+ 	}
+ 	else if (problemName == "maximalRectangle"){
+ 		maximal.printBruteForce();
  		return 0;
  	}
- 	else (problemName == "maximalRectangle"){
- 		printmaximalRectangleBruteForce();
- 		return 0;
+ 	else {
+ 		return 1;
  	}
 }
 
 int checkProblemNameBest(string problemName){
+	WordSearchII search;
+	MaximalRectangle maximal;
  	if (problemName == "WordSearchII"){
- 		printWordSearchIIBest();
+ 		search.printBest();
  		return 0;
  	}
  	else {
- 		printmaximalRectangleBest();
+ 		maximal.printBest();
  		return 0;
  	}
 }
