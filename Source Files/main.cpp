@@ -4,7 +4,8 @@
 using namespace std;
 
 void printFileBruteForce(string fileName){
-		ifstream f(fileName);
+		cout << fileName + ".cpp";
+		ifstream f(fileName + ".cpp");
 		if (!f.is_open()) {
 			cerr << "Error: Could not open the file." << endl;
 		}
@@ -51,12 +52,12 @@ int checkProblemName(string problemName){
 }
 
 
-int checkAnswerCharacteristics(string answerCharacteristics, string problemName){
-	if (answerCharacteristics == "brute force"){
+int checkAnswerCharacteristics(int answerCharacteristics, string problemName){
+	if (answerCharacteristics == 1){
 		printFileBruteForce(problemName);
 		return 0;
 	}
-	else if (answerCharacteristics == "efficient" or answerCharacteristics == "most efficient"){
+	else if (answerCharacteristics == 2){
 		printFileMostEfficient(problemName);
 		return 0;
 	}
@@ -67,7 +68,7 @@ int checkAnswerCharacteristics(string answerCharacteristics, string problemName)
 
 int main(){
 	string problemName;
-	string answerCharacteristics;
+	int answerCharacteristics;
 
 	cout << "Welcome to the LeetCode Chatbot. Please enter the problem name: ";
 	cin >> problemName;
@@ -78,7 +79,7 @@ int main(){
     	return 0;
     }
 
-    cout << "Would you like a brute force answer or the most efficient answer?";
+    cout << "Would you like a brute force answer or the most efficient answer? Choose 1 or 2.";
     cin >> answerCharacteristics;
 
     checkAnswerCharacteristics(answerCharacteristics, problemName);
