@@ -34,10 +34,10 @@ void printFileMostEfficient(string fileName){
 
 int checkProblemName(string problemName){
 	string prob;
- 	if (problemName == "WordSearchII" or problemName == "maximalRectangle"){
+ 	if (problemName == "WordSearchII" || problemName == "maximalRectangle"){
  		cout << "Is the problem name " << problemName << "? Answer true or false.";
  		cin >> prob;
- 		if (prob == "true" or prob == "True"){
+ 		if (prob == "true" || prob == "True"){
  			return 0;
  		}
  		else {
