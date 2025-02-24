@@ -98,6 +98,15 @@ int checkAnswerCharacteristics(int answerCharacteristics, string problemName){
 	}
 }
 
+/* int main()
+* Main function.
+* Return type: integer
+* 1. Create variables string problemName, int answerCharacteristics.
+* 2. Retrieve the problem name from user input.
+* 3. Check to see if the problem is in the chatbot.
+* 4. Ask the user if they want a brute force solution or the most efficient solution.
+* 5. Return 0.
+*/
 int main(){
 	string problemName;
 	int answerCharacteristics;
