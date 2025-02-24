@@ -48,6 +48,16 @@ void printFileMostEfficient(string fileName){
 	f.close();
 }
 
+/* checkProblemName
+* Parameters: string problemName
+* Return type: integer
+* 1. Create problem variable.
+* 2. Check for the problem name.
+* 3. Check to see if the problem name is in the database.
+	- If it is, return 0 and leave an error message.
+	- Else, return 1 and leave an error message. Tell them to re-enter a different problem name.
+* 4. Print an error message explaining that the problem is not in storage outside of the if statement.
+*/
 int checkProblemName(string problemName){
 	string prob;
  	if (problemName == "WordSearchII" || problemName == "maximalRectangle"){
