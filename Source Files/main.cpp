@@ -3,6 +3,14 @@
 #include <string>
 using namespace std;
 
+/* printFileBruteForce
+* Parameters: string fileName
+* Type: void
+* 1. Concatenate the file name into the input.
+* 2. Retrieve the source file.
+* 3. If the file is not open, return an error message.
+* 4. Individually, retrieve each line from the file.
+*/
 void printFileBruteForce(string fileName){
 		cout << fileName + ".cpp";
 		ifstream f(fileName + ".cpp");
