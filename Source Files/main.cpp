@@ -26,6 +26,14 @@ void printFileBruteForce(string fileName){
 	f.close();
 }
 
+/* printFileMostEfficient
+* Parameters: string fileName
+* Return type: void
+* 1. Concatenate the file name into the input.
+* 2. Retrieve the source file.
+* 3. If the file is not open, return an error message.
+* 4. Individually, retrieve each line from the file.
+*/
 void printFileMostEfficient(string fileName){
 		ifstream f(fileName);
 		if (!f.is_open()) {
