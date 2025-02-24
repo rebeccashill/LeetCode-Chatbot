@@ -77,7 +77,13 @@ int checkProblemName(string problemName){
  	}
 }
 
-
+/* checkAnswerCharacteristics
+* Parameters: int answerCharacteristics, string problemName
+* Return type: Integer
+* If the user is looking for a brute force solution, call printFileBruteForce.
+* If the user is looking for the most efficient solution, call printFileMostEfficient.
+* Else, print 1 (error).
+*/
 int checkAnswerCharacteristics(int answerCharacteristics, string problemName){
 	if (answerCharacteristics == 1){
 		printFileBruteForce(problemName);
