@@ -9,7 +9,7 @@ struct TrieNode{
     TrieNode* next[26];
 };
 
-/* Word Search II
+/* Word Search II (Runtime 262ms (beats 82.34%), Memory 19.02MB (beats 76.79%))
  *
  * 1. Create a private class
  * 2. Create backtrack
